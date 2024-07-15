@@ -54,8 +54,8 @@
 
   - name: copy catalogue service
     ansible.builtin.copy:
-      src: catalogue.services
-      dest: /etc/systemd/system/catalogue.services
+      src: catalogue.service
+      dest: /etc/systemd/system/catalogue.service
 
   - name: deamon reload
     ansible.builtin.systemd:
