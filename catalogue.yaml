@@ -73,6 +73,7 @@
 
   - name: load schema
     ansible.builtin.command: mongo --host mongodb.weldevops.online < /app/schema/catalogue.js
+    ignore_errors: yes
 
   - name: restart andd enable catalogue
     ansible.builtin.service:
