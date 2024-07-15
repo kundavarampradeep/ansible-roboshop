@@ -75,7 +75,7 @@
     ansible.builtin.command: mongo --host mongodb.weldevops.online < /app/schema/catalogue.js
     ignore_errors: yes
 
-  - name: restart andd enable catalogue
+  - name: restart catalogue
     ansible.builtin.service:
       name: catalogue
       state: restarted
