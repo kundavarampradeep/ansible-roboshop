@@ -41,7 +41,10 @@
       url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
       dest: /tmp
 
-  - name: extract catalogue artifacts
-    ansible.builtin.unarchive:
+  - name: extract catalogue artifacts 
+    ansible.builtin.unarchive:  # in this case unarchive a file that is already on the remote machine
       src: /tmp/catalogue.zip
       dest: /app
+      remote_src: yes
+
+  
