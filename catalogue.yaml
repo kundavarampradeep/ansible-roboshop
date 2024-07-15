@@ -72,7 +72,7 @@
       state: installed
 
   - name: load schema
-    ansible.builtin.command: mongo --host mongodb.weldevops.online </app/schema/catalogue.js
+    ansible.builtin.command: mongo --host mongodb.weldevops.online < /app/schema/catalogue.js
 
   - name: restart andd enable catalogue
     ansible.builtin.service:
