@@ -73,7 +73,8 @@
 
   - name: load catalogue data
     ansible.builtin.command: mongo --host mongodb.joindevops.online < /app/schema/catalogue.js
-
+    ignore_errors: yes
+    
   - name: restart catalogue
     ansible.builtin.service:
       name: catalogue
