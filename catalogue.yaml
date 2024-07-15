@@ -71,14 +71,12 @@
       name: mongodb-org-shell
       state: installed
 
-  - name: load schema
-    ansible.builtin.command: mongo --host mongodb.weldevops.online < /app/schema/catalogue.js
-    ignore_errors: yes
+  - name: load catalogue data
+    ansible.builtin.command: mongo --host mongodb.joindevops.online < /app/schema/catalogue.js
 
   - name: restart catalogue
     ansible.builtin.service:
       name: catalogue
       state: restarted
       enabled: true
-
   
