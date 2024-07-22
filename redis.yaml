@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: install redis repo
-      ansible.builtin.yum
+      ansible.builtin.yum:
         name: yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
         state: installed
         disable_gpg_check: true
@@ -17,9 +17,9 @@
 
     - name: enable remote connections to mongodb
       ansible.builtin.replace:
-       path: /etc/redis.conf
-       regexp: '127.0.0.0'
-       replace: '0.0.0.0'
+        path: /etc/redis.conf
+        regexp: '127.0.0.0'
+        replace: '0.0.0.0'
 
     - name: start and enable redis
       ansible.builtin.service:
