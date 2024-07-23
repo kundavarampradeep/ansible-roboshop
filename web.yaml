@@ -6,18 +6,15 @@
     ansible.builtin.yum:
       name: nginx
       state: installed
-      
   - name: start and enable nginx
     ansible.builtin.service:
       name: nginx
       state: started
       enabled: yes
-
   - name: remove html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
-
   - name: create html directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
@@ -43,4 +40,3 @@
     ansible.builtin.service:
       name: nginx
       state: restarted
-      
